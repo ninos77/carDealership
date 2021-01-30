@@ -42,12 +42,14 @@ class Car(models.Model):
   year = models.IntegerField(('year'), choices=year_choice[::-1])
   condition = models.CharField(max_length=100)
   price= models.DecimalField(max_digits=10, decimal_places=2)
+  reduced_price= models.DecimalField(max_digits=10, decimal_places=2,null=True,blank=True)
   description = RichTextField()
   car_photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
   car_photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
   car_photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
   car_photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
   car_photo_4 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+  car_photo_5 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
   features = MultiSelectField(choices=features_choices)
   body_style = models.CharField(max_length=100)
   engine = models.CharField(max_length=100)
@@ -61,6 +63,7 @@ class Car(models.Model):
   fuel_type = models.CharField(max_length=50)
   no_of_owners = models.CharField(max_length=100)
   is_featured = models.BooleanField(default=False)
+  is_sold = models.BooleanField(default=False)
   created_date = models.DateTimeField(default=datetime.now, blank=True)
 
 

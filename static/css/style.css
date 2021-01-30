@@ -2700,6 +2700,22 @@ input[type=checkbox]:checked + label:before {
     background: #292929;
     text-transform: uppercase;
 }
+.tag-sold {
+    float: left;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: -60px;
+    top: 30px;
+    text-align: center;
+    width: 200px;
+    font-size: 12px;
+    margin: 0;
+    color: #fff;
+    font-weight: 500;
+    line-height: 28px;
+    background: #ee0000;
+    text-transform: uppercase;
+}
 
 .slide-2{
     margin-bottom: 50px;
