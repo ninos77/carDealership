@@ -34,6 +34,19 @@ class Car(models.Model):
         ('5', '5'),
         ('6', '6'),
     )  
+  fuel_choices = (
+        ('Bensin', 'Bensin'),
+        ('Diesel', 'Diesel'),
+        ('Hybrid', 'Hybrid'),
+        ('EL', 'EL'),
+        ('Ethanol', 'Ethanol'),
+
+    )
+
+  transmission_choices =(
+    ('Automatic ','Automatic'),
+    ('Manual','Manual'),
+  )   
   car_title = models.CharField(max_length=255)
   state = models.CharField(max_length=100)
   city = models.CharField(max_length=100)
@@ -53,14 +66,14 @@ class Car(models.Model):
   features = MultiSelectField(choices=features_choices)
   body_style = models.CharField(max_length=100)
   engine = models.CharField(max_length=100)
-  transmission = models.CharField(max_length=100)
+  transmission = models.CharField(choices=transmission_choices, max_length=10)
   interior = models.CharField(max_length=100)
   miles = models.IntegerField()
   doors = models.CharField(choices=door_choices, max_length=10)
   passengers = models.IntegerField()
   vin_no = models.CharField(max_length=100)
   milage = models.IntegerField()
-  fuel_type = models.CharField(max_length=50)
+  fuel_type = models.CharField(choices=fuel_choices, max_length=10)
   no_of_owners = models.CharField(max_length=100)
   is_featured = models.BooleanField(default=False)
   is_sold = models.BooleanField(default=False)

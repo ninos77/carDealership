@@ -133,7 +133,7 @@
           <div class="slick-slide-item">
             <div class="car-box-3">
               <div class="car-thumbnail">
-                <a href="car-details.html" class="car-img">
+                <a href="{% url 'car_detail' c.id %}" class="car-img">
                   {% if  c.is_sold %}
                   <div class="tag-sold">Sold</div>
                   {% else %}
@@ -192,7 +192,7 @@
                   <a href="{% url 'car_detail' c.id %}">{{c.car_title}}</a>
                 </h1>
                 <div class="location">
-                  <a href="car-details.html">
+                  <a href="{% url 'car_detail' c.id %}">
                     <i class="flaticon-pin"></i>{{c.state}} {{c.city}},
                   </a>
                 </div>
