@@ -18,3 +18,6 @@ def car_detail(request, id):
   data = {'singel_car':singel_car}
   return render (request,'cars/car_detail.html',data)
 
+def search(request):
+  return render (request,'cars/search.html')  
+
