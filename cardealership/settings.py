@@ -82,6 +82,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'car-dealership_db',
+        'USER': 'postgres',
+        'PASSWORD': 'Itanaeliana1216',
+        'HOST': 'localhost',
     }
 }
 
